@@ -10,6 +10,10 @@ def create_entry(ticker: str, day: int) -> dict[str, Any]:
     close_value = random.randint(0, 100)
     high_value = random.randint(max(open_value, close_value), 100)
     low_value = random.randint(0, min(open_value, close_value))
+
+    average = random.randint(low_value, high_value)
+    other_data = random.random()
+
     return {
         "ticker": ticker,
         "date": datetime(2025, 1, day).date(),
@@ -17,6 +21,8 @@ def create_entry(ticker: str, day: int) -> dict[str, Any]:
         "close": close_value,
         "low": low_value,
         "high": high_value,
+        "average": average,
+        "other_data": other_data,
     }
 
 
